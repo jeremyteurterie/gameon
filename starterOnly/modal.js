@@ -12,8 +12,15 @@ const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const modalClose = document.querySelectorAll(".close");
-// referencing form element
-const form = document.getElementById('signup');
+const form = document.getElementById("#signup"); // referencing form element
+
+// validations or errors messages
+const NAME_INVALID = "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
+const OPTION_INVALID = "Vous devez choisir une option.";
+const CONDITION_INVALID = "Vous devez vérifier que vous acceptez les termes et conditions.";
+const BIRTHDAY_INVALID = "Vous devez entrer votre date de naissance.";
+const EMAIL_INVALID = "Veuillez saisir un format d'adresse e-mail correct";
+
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
