@@ -12,6 +12,8 @@ const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const modalClose = document.querySelectorAll(".close");
+// referencing form element
+const form = document.getElementById('signup');
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
