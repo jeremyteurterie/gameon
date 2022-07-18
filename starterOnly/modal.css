@@ -210,6 +210,19 @@ input {
   font-size: 20px;
   height: 48px;
 }
+.formData small {
+  visibility: hidden;
+}
+.formData span {
+  color: red;
+  font-size: 12px;
+}
+.formData.success input {
+  border-color: green;
+}
+.formData.error input {
+  border-color: red;
+}
 .formData[data-error]::after {
   content: attr(data-error);
   font-size: 0.4em;
