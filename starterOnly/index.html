@@ -60,11 +60,10 @@
               name="reserve"
               action="index.html"
               method="get"
-              id="signup"
-              onsubmit="return validate();"
+              id="reserve"
             >
               <div
-                class="formData first-container">
+                class="formData">
                 <label for="first">Prénom</label><br>
                 <input
                   class="text-control"
@@ -73,10 +72,11 @@
                   name="first"
                   minlength="2"
                 /><br>
+                <div id="firstError" class="first-container"></div>
                 <span></span>
               </div>
               <div
-                class="formData last-container">
+                class="formData">
                 <label for="last">Nom</label><br>
                 <input
                   class="text-control"
@@ -84,10 +84,11 @@
                   id="last"
                   name="last"
                 /><br>
+                <div id="lastError" class="last-container"></div>
                 <span></span>
               </div>
               <div
-                class="formData email-container">
+                class="formData">
                 <label for="email">E-mail</label><br>
                 <input
                   class="text-control"
@@ -95,10 +96,11 @@
                   id="email"
                   name="email"
                 /><br>
+                <div id="emailError" class="email-container"></div>
                 <span></span>
               </div>
               <div
-                class="formData birthdate-container">
+                class="formData">
                 <label for="birthdate">Date de naissance</label><br>
                 <input
                   class="text-control"
@@ -106,16 +108,17 @@
                   id="birthdate"
                   name="birthdate"
                 /><br>
-                <span></span>
+                <div id="birthdateError"></div>
               </div>
               <div
-                class="formData quantity-container">
+                class="formData">
                 <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
                 <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+                <div id="quantityError"></div>
               </div>
               <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
               <div
-                class="formData location-container">
+                class="formData">
                 <input
                   class="checkbox-input"
                   type="radio"
@@ -182,22 +185,21 @@
                   <span class="checkbox-icon"></span>
                   Portland</label
                 >
-                <span></span>
+                <div id="locationError"></div>
               </div>
 
               <div
-                class="formData checkbox-container">
+                class="formData">
                 <input
                   class="checkbox-input"
                   type="checkbox"
                   id="checkbox1"
-                  checked
                 />
                 <label class="checkbox2-label" for="checkbox1" required>
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
-                <span></span>
+                <div id="conditionError"></div>
                 <br>
                 <input class="checkbox-input" type="checkbox" id="checkbox2" />
                 <label class="checkbox2-label" for="checkbox2">
@@ -214,6 +216,13 @@
               />
             </form>
           </div>
+          <div id="messageConfirmation">Votre inscription a bien été prise en compte</div>
+          <input
+            id = "closeBtn"
+            class="button btn-submit"
+            type="button"
+            value="Fermer"
+          />
         </div>
       </div>
     </main>
