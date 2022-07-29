@@ -169,7 +169,7 @@ function inputsChecker() {
   return (formConfirmation = true);
 }
 
-// fonction pour vérifier que le formulaire est correcte, si oui, affichage du message de confirmation
+// fonction pour vérifier que le formulaire est correcte, si oui, affichage du message de confirmation + stoackage des données
 function formValidation(event) {
   event.preventDefault();
   inputsChecker();
@@ -181,29 +181,35 @@ function formValidation(event) {
     submitBtn.style.display = "none";
     messageConfirmation.style.display = "flex";
     closeBtn.addEventListener("click", closeModal);
+    // stockage des données dans localStorage
+    localStorage.setItem("first", document.querySelector("#first").value);
+    localStorage.setItem("last", document.querySelector("#last").value);
+    localStorage.setItem("email", document.querySelector("#email").value);
+    localStorage.setItem(
+      "birthdate",
+      document.querySelector("#birthdate").value
+    );
+    localStorage.setItem("quantity", document.querySelector("#quantity").value);
+    localStorage.setItem(
+      "city",
+      document.querySelector("input[name='location']:checked").value
+    );
+    localStorage.setItem(
+      "condition",
+      document.querySelector("#checkbox1").value
+    );
+
+    // affichage des données dans la console
+    console.log(document.querySelector("#first").value);
+    console.log(document.querySelector("#last").value);
+    console.log(document.querySelector("#email").value);
+    console.log(document.querySelector("#birthdate").value);
+    console.log(document.querySelector("#quantity").value);
+    console.log(document.querySelector("input[name='location']:checked").value);
+    console.log(document.querySelector("#checkbox1").value);
     return true;
   }
 }
-
-// récupération des données dans le local storage
-submitBtn.addEventListener("click", () => {
-  localStorage.setItem("first", document.querySelector("#first").value);
-  localStorage.setItem("last", document.querySelector("#last").value);
-  localStorage.setItem("email", document.querySelector("#email").value);
-  localStorage.setItem("birthdate", document.querySelector("#birthdate").value);
-  localStorage.setItem("quantity", document.querySelector("#quantity").value);
-  localStorage.setItem("city", document.getElementsByName("location").checked);
-  localStorage.setItem("condition", document.querySelector("#checkbox1").value);
-
-  // affichage des données dans la console
-  console.log(document.querySelector("#first").value);
-  console.log(document.querySelector("#last").value);
-  console.log(document.querySelector("#email").value);
-  console.log(document.querySelector("#birthdate").value);
-  console.log(document.querySelector("#quantity").value);
-  console.log(document.getElementsByName("location").value);
-  console.log(document.querySelector("#checkbox1").value);
-});
 
 // event au clique sur le boutton "C'est parti" qui appele la fonction pour la vérification du formulaire
 form.addEventListener("submit", formValidation);
