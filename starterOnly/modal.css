@@ -484,7 +484,7 @@ footer {
 }
 
 /* media query desktop */
-@media screen and (max-width: 1125px) {
+@media screen and (max-width: 1200px) {
   .topnav.responsive {
     position: relative;
   }
@@ -508,7 +508,7 @@ footer {
 }
 
 /* media query tablet */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 900px) {
   .hero-section {
     display: block;
     box-shadow: unset;
@@ -551,7 +551,7 @@ footer {
 }
 
 /* media query mobile */
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 480px) {
   .topnav {
     display: flex;
     justify-content: space-between;
